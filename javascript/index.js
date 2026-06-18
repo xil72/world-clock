@@ -24,6 +24,19 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]",
     );
   }
+
+  // North Macedonia (Skopje)
+  let skopjeElement = document.querySelector("#skopje");
+  if (skopjeElement) {
+    let skopjeDateElement = skopjeElement.querySelector(".date");
+    let skopjeTimeElement = skopjeElement.querySelector(".time");
+    let skopjeTime = moment().tz("Europe/Skopje");
+
+    skopjeDateElement.innerHTML = skopjeTime.format("MMMM Do YYYY");
+    skopjeTimeElement.innerHTML = skopjeTime.format(
+      "h:mm:ss [<small>]A[</small>]",
+    );
+  }
 }
 
 function updateCity(event) {
@@ -44,7 +57,6 @@ function updateCity(event) {
       "A",
     )}</small></div>
   </div>
-  <a href="/">All cities</a>
   `;
 }
 
